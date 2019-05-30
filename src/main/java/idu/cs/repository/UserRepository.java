@@ -4,14 +4,14 @@ import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import idu.cs.domain.User;
+import idu.cs.domain.UserEntity;
 
 public interface UserRepository 
-	extends JpaRepository<User, Long> {
+	extends JpaRepository<UserEntity, Long> {
 	// User findById(); ==> 자동으로 생성됨
 	// find ==> select문
-	User findByUserId(String userId);	// id : 자동증가번호, userId : 회원가입 시 생성 id
-	List<User> findByName(String name);
-	List<User> findByNameOrderByIdAsc(String name);
-	List<User> findByCompany(String company);
+	UserEntity findByUserId(String userId);	// id : 자동증가번호, userId : 회원가입 시 생성 id
+	List<UserEntity> findByName(String name);
+	List<UserEntity> findByNameOrderByIdAsc(String name);
+	List<UserEntity> findByCompany(String company);
 }
